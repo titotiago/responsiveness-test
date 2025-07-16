@@ -1,0 +1,356 @@
+:root {
+    /* Colors */
+    --color-white: #ffffff;
+    --color-dark: #2c2c2c;
+    --color-darker: #1a1a1a;
+    --color-text: #333;
+    --color-light-bg: #f5f5f5;
+    --color-gray: #bbb;
+    --color-gray-dark: #999;
+    --color-border: #ddd;
+    --color-yellow: #FFD600;
+    --color-green: #00FF94;
+    --color-blue: #0FD4FF;
+    
+    /* Gradients */
+    --gradient-hero-mobile: linear-gradient(0deg, #E8E8E8 0%, #FFFFFF 100%);
+    --gradient-hero-desktop: linear-gradient(90deg, #E8E8E8 0%, #FFFFFF 100%);
+    --gradient-text: linear-gradient(90deg, #04BAAD 0%, #FEC304 100%);
+    --gradient-shine: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    
+    /* Spacing */
+    --space-xs: 10px;
+    --space-sm: 15px;
+    --space-md: 20px;
+    --space-lg: 25px;
+    --space-xl: 30px;
+    --space-2xl: 40px;
+    --space-3xl: 50px;
+    --space-4xl: 130px;
+    --space-5xl: 160px;
+    
+    /* Font Sizes */
+    --font-size-button: 20px;
+    --font-size-header-mobile: 48px;
+    --font-size-header-desktop: 64px;
+    --font-size-grid-mobile: 40px;
+    --font-size-grid-desktop: 64px;
+    
+    /* Typography */
+    --font-family-main: Arial;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+    --line-height-tight: 100%;
+    --letter-spacing-none: 0%;
+    
+    --border-radius: 10px;
+    --transition-fast: all 0.3s ease;
+    --transition-shine: left 0.5s ease;
+    --min-height-grid: 100px;
+    --min-height-grid-desktop: 120px;
+    --min-height-card: 200px;
+    --height-hero: 400px;
+    --height-card-tall: 420px;
+
+    --shadow-light: 0 8px 20px rgba(0,0,0,0.15);
+    --shadow-dark: 0 8px 20px rgba(0,0,0,0.3);
+    --shadow-hover: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--color-white);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-sm);
+}
+
+.hero {
+    background: var(--gradient-hero-mobile);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    height: var(--height-hero);
+    padding-top: var(--space-2xl);
+    padding-bottom: 16px;
+}
+
+.hero-content {
+    padding: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.hero-title {
+    font-family: var(--font-family-main);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-header-mobile);
+    width: 200px;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-none);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    width: 100%;
+    padding: 0 var(--space-xs);
+}
+
+.btn {
+    width: 100%;
+    padding: var(--space-xs) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-none);
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:focus,
+.btn:focus-visible {
+    outline: 2px solid var(--color-dark);
+    outline-offset: 2px;
+}
+
+.btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    transform: translateY(-1px);
+}
+
+.btn-dark:focus {
+    outline-color: var(--color-white);
+}
+
+.btn-light {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+}
+
+.btn-light:hover {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    border-color: var(--color-gray-dark);
+    transform: translateY(-1px);
+}
+
+.btn-light:focus {
+    outline-color: var(--color-dark);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "c c"
+        "b1 b1"
+        "b2 b3"
+        "b4 b4"
+        "d d";
+    gap: var(--space-sm);
+}
+
+.grid-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-grid-mobile);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-none);
+    text-align: center;
+    color: var(--color-text);
+    min-height: var(--min-height-grid);
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.grid-item:focus,
+.grid-item:focus-visible {
+    outline: 3px solid var(--color-dark);
+    outline-offset: 2px;
+    z-index: 1;
+}
+
+/* Shine animation */
+.grid-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    transition: var(--transition-shine);
+}
+
+.grid-item:hover::before,
+.grid-item:focus::before {
+    left: 100%;
+}
+
+.grid-item:hover,
+.grid-item:focus {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.grid-item:active {
+    transform: translateY(-2px);
+}
+
+/* Grid Areas */
+.b1 {
+    grid-area: b1;
+}
+
+.b2 {
+    grid-area: b2;
+}
+
+.b3 {
+    grid-area: b3;
+}
+
+.b4 {
+    grid-area: b4;
+
+}
+.b1, .b2, .b3, .b4 {
+    background: var(--color-yellow);
+    min-height: var(--min-height-card);
+}
+
+.c {
+    grid-area: c;
+    background: var(--color-green);
+    height: var(--height-card-tall);
+}
+
+.d {
+    grid-area: d;
+    background: var(--color-blue);
+    height: var(--height-card-tall);
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .container {
+        padding: var(--space-2xl) var(--space-md);
+    }
+    
+    .hero {
+        background: var(--gradient-hero-desktop);
+        text-align: left;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    .hero-content {
+        padding: var(--space-4xl) var(--space-5xl);
+        width: fit-content;
+        display: block;
+        margin: 0;
+        height: auto;
+        align-items: unset;
+        justify-content: unset;
+        flex-direction: unset;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-header-desktop);
+        width: fit-content;
+        margin-bottom: var(--space-xl);
+        text-align: left;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: unset;
+    }
+    
+    .btn {
+        width: 177px;
+        height: 43px;
+        padding: var(--space-xs) var(--space-3xl);
+        font-size: var(--font-size-button);
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+        grid-template-areas: 
+            "b1 b1 b1 c"
+            "b2 b3 b4 c"
+            "d d d d";
+        gap: var(--space-md);
+    }
+    
+    .grid-item {
+        font-size: var(--font-size-grid-desktop);
+        min-height: var(--min-height-grid-desktop);
+    }
+    
+    .c {
+        min-height: var(--height-card-tall);
+        height: auto;
+    }
+    
+    .d {
+        min-height: var(--height-hero);
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-item {
+        font-size: var(--font-size-grid-mobile);
+        min-height: 80px;
+    }
+} 
