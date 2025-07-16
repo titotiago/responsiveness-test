@@ -35,6 +35,8 @@
     --font-size-header-desktop: 64px;
     --font-size-grid-mobile: 40px;
     --font-size-grid-desktop: 64px;
+    --font-size-grid-large-mobile: 64px;
+    --font-size-grid-large-desktop: 96px;
     
     /* Typography */
     --font-family-main: Arial;
@@ -267,12 +269,14 @@ body {
     grid-area: c;
     background: var(--color-green);
     height: var(--height-card-tall);
+    font-size: var(--font-size-grid-large-mobile);
 }
 
 .d {
     grid-area: d;
     background: var(--color-blue);
     height: var(--height-card-tall);
+    font-size: var(--font-size-grid-large-mobile);
 }
 
 /* Desktop */
@@ -340,11 +344,13 @@ body {
     .c {
         min-height: var(--height-card-tall);
         height: auto;
+        font-size: var(--font-size-grid-large-desktop);
     }
     
     .d {
         min-height: var(--height-hero);
         height: auto;
+        font-size: var(--font-size-grid-large-desktop);
     }
 }
 
